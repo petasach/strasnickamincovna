@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Restaurant Name</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Open Sans', sans-serif; line-height: 1.6; color: #333; }
+
+    /* Layout */
+    header { position: fixed; top:0; left:0; width:100%; background: rgba(255,255,255,0.95); box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 100; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    nav { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    nav .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li a { text-decoration: none; color: #333; font-weight: 600; transition: color .3s; }
+    nav ul li a:hover { color: #a33; }
+
+    /* Hero section */
+    .hero { height: 80vh; background: url('hero-image.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; color: white; text-align: center; position: relative; }
+    .hero::after { content: ''; position: absolute; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.4); }
+    .hero .hero-content { position: relative; z-index: 1; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 10px; }
+    .hero p { font-size: 1.2rem; }
+
+    /* Sections */
+    section { padding: 80px 0; }
+    .about, .menu, .contact { text-align: center; }
+
+    .about h2, .menu h2, .contact h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; }
+
+    .about p { max-width: 800px; margin: 0 auto; }
+
+    /* Menu grid */
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 40px; }
+    .menu-item { border: 1px solid #eee; padding: 20px; border-radius: 8px; transition: transform .3s, box-shadow .3s; }
+    .menu-item:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    .menu-item h3 { font-family: 'Playfair Display', serif; margin-bottom: 10px; }
+    .menu-item p { margin-bottom: 10px; }
+    .menu-item .price { font-weight: 600; color: #a33; }
+
+    /* Contact */
+    .contact form { max-width: 600px; margin: 0 auto; display: grid; gap: 20px; }
+    .contact input, .contact textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+    .contact button { padding: 12px 20px; font-size: 1rem; background: #a33; color: white; border: none; border-radius: 4px; cursor: pointer; transition: background .3s; }
+    .contact button:hover { background: #872626; }
+
+    /* Footer */
+    footer { background: #f8f8f8; padding: 40px 0; text-align: center; }
+    footer p { color: #777; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      nav ul { gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Restaurant Name</div>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Our Restaurant</h1>
+      <p>Where taste meets tradition</p>
+    </div>
+  </section>
+
+  <section id="about" class="about container">
+    <h2>About Us</h2>
+    <p>Welcome to our restaurant! We are dedicated to bringing you the finest culinary experience, blending traditional flavors with modern techniques. Our chefs carefully curate each dish, and our welcoming atmosphere makes every visit special.</p>
+  </section>
+
+  <section id="menu" class="menu container">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <h3>Grilled Salmon</h3>
+        <p>Served with seasonal vegetables and lemon butter sauce.</p>
+        <div class="price">€24</div>
+      </div>
+      <div class="menu-item">
+        <h3>Ribeye Steak</h3>
+        <p>Premium cut, cooked to your liking, with garlic mash.</p>
+        <div class="price">€32</div>
+      </div>
+      <div class="menu-item">
+        <h3>Vegan Risotto</h3>
+        <p>Creamy arborio rice with mushrooms and truffle oil.</p>
+        <div class="price">€18</div>
+      </div>
+      <div class="menu-item">
+        <h3>Chocolate Lava Cake</h3>
+        <p>Warm, gooey center, served with vanilla ice cream.</p>
+        <div class="price">€9</div>
+      </div>
+      <!-- add more menu items as needed -->
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact & Reservations</h2>
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Your Phone">
+        <textarea name="message" rows="4" placeholder="Your Message / Reservation Request"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Your Restaurant Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
