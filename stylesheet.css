@@ -294,6 +294,7 @@ footer p {
 .reservation-container {
     max-width: 600px;
     margin: 60px auto;
+    margin-top: calc(var(--header-height) + 60px) !important;
     padding: 30px;
     background: #fff;
     border-radius: 16px;
@@ -342,7 +343,7 @@ textarea {
 .reservation-container button {
     width: 100%;
     padding: 14px;
-    background: #a33;
+    background: var(--button-color);
     color: white;
     border: none;
     border-radius: 10px;
@@ -354,7 +355,7 @@ textarea {
 }
 
 button:hover {
-    background: #811;
+    background: var(--button-color);
 }
 
 @media (max-width: 768px) {
@@ -387,6 +388,10 @@ button:hover {
     margin: 20px 0 30px 0;
     }
 
+    button:hover {
+        background: none;
+    }
+
     input[type="date"],
     input[type="time"],
     select {
@@ -399,4 +404,3 @@ button:hover {
         appearance: none;
     }
 }
-
