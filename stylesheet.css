@@ -391,6 +391,7 @@ button:hover {
     input[type="time"],
     select {
         width: 100% !important;
+        text-align: left;
         padding: 14px;
         min-width: 0 !important;
         color: #000;
@@ -398,3 +399,4 @@ button:hover {
         appearance: none;
     }
 }
+
