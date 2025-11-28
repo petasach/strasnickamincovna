@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strašnická Mincovna</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo" onclick="topFunction()"><img src="smlogo.png" alt="Logo"></div>
+        <ul>
+          <li><a href="#onas">O nás</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Nějaká fotka? Možná text přes ní??</h1>
+    </div>
+  </section>
+
+  <section id="onas" class="about container">
+    <h2>O nás</h2>
+    <p>Nějaký kecy o ty restauraci.</p>
+  </section>
+
+  <!-- MENU SECTION -->
+  <section id="menu" class="menu container">
+    <h2>Naše menu</h2>
+
+    <!-- HLAVNI MENU -->
+    <div class="menu-tabs">
+        <button class="tab active" data-target="kpivu">K pivu</button>
+        <button class="tab" data-target="tataraky">Tataráky</button>
+        <button class="tab" data-target="polevky">Polévky</button>
+        <button class="tab" data-target="naseknedliky">Naše knedlíky</button>
+        <button class="tab" data-target="smazene">Smažené</button>
+        <button class="tab" data-target="grill">Grill</button>
+        <button class="tab" data-target="omackyaprilohy">Omáčky a přílohy</button>
+        <button class="tab" data-target="dezerty">Dezerty</button>
+        <button class="tab" data-target="napoje">Nápoje</button>
+    </div>
+
+    <!-- K PIVU -->
+    <div class="menu-list active" id="kpivu">
+
+        <!-- SUBMENU -->
+        <div class="submenu">
+            <button class="subtab active" data-sub="studenekpivu">Studené k pivu</button>
+            <button class="subtab" data-sub="teplekpivu">Teplé k pivu</button>
+        </div>
+
+        <!-- STUDENE K PIVU -->
+        <div class="sublist active" id="studenekpivu">
+            <div class="menu-row">
+              <span class="dish">150g Hovězí roastbeef s hořčičnou majonézou</span>
+              <span class="price">195 Kč</span>
+            </div>
+            <div class="menu-row">
+              <span class="dish">150g Tlačenka s octem a fermentovanou červenou cibulí</span>
+              <span class="price">115 Kč</span>
+            </div>
+            <div class="menu-row">
+              <span class="dish">100g Nakládaný hermelín s konfitovaným česnekem a chilli vločkami </span>
+              <span class="price">120 Kč</span>
+            </div>
+            <div class="menu-row">
+              <span class="dish">100g Pomazánka z vepřového bůčku se zeleným pepřem</span>
+              <span class="price">120 Kč</span>
+            </div>
+            <div class="menu-row">
+              <span class="dish">140g Nakládané karbanátky na kyselo</span>
+              <span class="price">125 Kč</span>
+            </div>
+        </div>
+
+        <!-- TEPLE K PIVU -->
+        <div class="sublist" id="teplekpivu">
+            <div class="menu-row">
+              <span class="dish">150g Hovězí guláš s červenou cibulkou</span>
+              <span class="price">175 Kč</span>
+            </div>
+            <div class="menu-row">
+              <span class="dish">150g Pečené vykoštěné koleno s křenem, hořčicí a nakládanou zeleninou</span>
+              <span class="price">155 Kč</span>
+            </div>
+            <div class="menu-row">
+              <span class="dish">3ks Učňovské párky s křenem a hořčicí</span>
+              <span class="price">115 Kč</span>
+            </div>
+            <div class="menu-row">
+              <span class="dish">1ks Štýrská klobása z grilu s dijonskou hořčicí </span>
+              <span class="price">125 Kč</span>
+            </div>
+            <div class="menu-row">
+              <span class="dish">150g Naše pečená sekaná s hořčicí a bílou cibulkou</span>
+              <span class="price">120 Kč</span>
+            </div>
+            <div class="menu-row">
+              <span class="dish">200g Smažené chipsy s česnekovým dipem </span>
+              <span class="price">115 Kč</span>
+            </div>
+        </div>
+    </div> 
+
+    <!-- TATARAKY -->
+    <div class="menu-list" id="tataraky">
+      <div class="menu-row">
+        <span class="dish">120g Namíchaný hovězí tatarák s topinkami a česnekem </span>
+        <span class="price">245 Kč</span>
+      </div>
+      <div class="menu-row">
+        <span class="dish">120g Hovězí tatarák s jalovcem, lanýžová majonéza, opečená bagetka</span>
+        <span class="price">245 Kč</span>
+      </div>
+      <div class="menu-row">
+        <span class="dish">120g Tatarák z olomouckých tvarůžků, opečený chléb </span>
+        <span class="price">245 Kč</span>
+      </div>
+    </div>
+
+    <!-- POLEVKY -->
+    <div class="menu-list" id="polevky">
+      <div class="menu-row">
+        <span class="dish">0,3l Silný hovězí vývar s masem, zeleninou a nudlemi</span>
+        <span class="price">65 Kč</span>
+      </div>
+      <div class="menu-row">
+        <span class="dish">0,3l Polévka dle denní nabídky</span>
+        <span class="price"></span>
+      </div>
+    </div>
+
+    
+    <!-- NASE KNEDLIKY -->
+    <div class="menu-list" id="naseknedliky">
+      <div class="menu-row">
+        <span class="dish">350g Konfitované kachní stehno, dušené červené zelí, bramborový knedlík</span>
+        <span class="price">265 Kč</span>
+      </div>
+      <div class="menu-row">
+        <span class="dish">150g Hovězí svíčková na smetaně, karlovarský knedlík, brusinky</span>
+        <span class="price">220 Kč</span>
+      </div>
+      <div class="menu-row">
+        <span class="dish">200g Moravský vrabec, dušené bílé zelí, houskové knedlíky </span>
+        <span class="price">210 Kč</span>
+      </div>
+      <div class="menu-row">
+        <span class="dish">3ks Plněné bramborové knedlíky uzeným masem, sekaný špenát, křupavá cibulka</span>
+        <span class="price">205 Kč</span>
+      </div>
+    </div>
+
+    <!-- SMAZENE -->
+    <div class="menu-list" id="smazene">
+      <div class="menu-row">
+        <span class="dish">170g Náš smažený holandský řízek, máslová bramborová kaše, kyselý zelný salátek</span>
+        <span class="price">230 Kč</span>
+      </div>
+      <div class="menu-row">
+        <span class="dish">140g Smažená gouda, vařené brambory, tatarská omáčka</span>
+        <span class="price">220 Kč</span>
+      </div>
+      <div class="menu-row">
+        <span class="dish">100g Smažený hermelín, vařené brambory, tatarská omáčka</span>
+        <span class="price">210 Kč</span>
+      </div>
+      <div class="menu-row">
+        <span class="dish">150g Smažené kuřecí řízečky, bramborový salát</span>
+        <span class="price">230 Kč</span>
+      </div>
+      <div class="menu-row">
+        <span class="dish">150g Smažené řízečky z vepřové panenky, šťouchané brambory</span>
+        <span class="price">250 Kč</span>
+      </div>
+      <div class="menu-row">
+        <span class="dish">500g Talíř kuřecích mini řízečků</span>
+        <span class="price">360 Kč</span>
+      </div>
+    </div>
+
+    <!-- GRILL -->
+    <div class="menu-list" id="grill">
+      <div class="menu-row">
+        <span class="dish">180g Steak z kuřecího prsa</span>
+        <span class="price">175 Kč</span>
+      </div>
+      <div class="menu-row">
+        <span class="dish">180g Grilovaná vepřová panenka</span>
+        <span class="price">195 Kč</span>
+      </div>
+      <div class="menu-row">
+        <span class="dish">300g Texas steak se sázeným vejcem</span>
+        <span class="price">220 Kč</span>
+      </div>
+      <div class="menu-row">
+        <span class="dish">140g Hovězí cheeseburger, hranolky, naše tatarská omáčka</span>
+        <span class="price">295 Kč</span>
+      </div>
+    </div>
+
+    <!-- OMACKY A PRILOHY -->
+    <div class="menu-list" id="omackyaprilohy">
+
+        <!-- SUBMENU -->
+        <div class="submenu">
+            <button class="subtab active" data-sub="omacky">Omáčky</button>
+            <button class="subtab" data-sub="prilohy">Přílohy</button>
+        </div>
+
+        <!-- OMACKY -->
+        <div class="sublist active" id="omacky">
+            <div class="menu-row">
+              <span class="dish">Ze zeleného pepře</span>
+              <span class="price">45 Kč</span>
+            </div>
+            <div class="menu-row">
+              <span class="dish">S krémovými žampiony</span>
+              <span class="price">45 Kč</span>
+            </div>
+            <div class="menu-row">
+              <span class="dish">Z modrého sýra</span>
+              <span class="price">45 Kč</span>
+            </div>
+            <div class="menu-row">
+              <span class="dish">Tatarská</span>
+              <span class="price">30 Kč</span>
+            </div>
+        </div>
+
+        <!-- PRILOHY -->
+        <div class="sublist" id="prilohy">
+            <div class="menu-row">
+              <span class="dish">Vařené brambory</span>
+              <span class="price">40 Kč</span>
+            </div>
+            <div class="menu-row">
+              <span class="dish">Šťouchané brambory</span>
+              <span class="price">45 Kč</span>
+            </div>
+            <div class="menu-row">
+              <span class="dish">Smažené hranolky</span>
+              <span class="price">50 Kč</span>
+            </div>
+            <div class="menu-row">
+              <span class="dish">Bramborová kaše</span>
+              <span class="price">55 Kč</span>
+            </div>
+            <div class="menu-row">
+              <span class="dish">Grilovaná zelenina</span>
+              <span class="price">75 Kč</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- DEZERTY -->
+    <div class="menu-list" id="dezerty">
+      <div class="menu-row">
+        <span class="dish">Koláš s lesním ovocem, zakysanou smetanou a drobenkou</span>
+        <span class="price">75 Kč</span>
+      </div>
+    </div>
+    
+
+    <!-- NAPOJE -->
+    <div class="menu-list" id="napoje">
+
+      <div class="submenu-drinks">
+        <button class="subtab active" data-sub="piva">Piva</button>
+        <button class="subtab" data-sub="panaky">Panáky</button>
+        <button class="subtab" data-sub="vino">Víno</button>
+        <button class="subtab" data-sub="nealkoholicke">Nealkoholické</button>
+        <button class="subtab" data-sub="teple">Teplé</button>
+        <button class="subtab" data-sub="michane">Míchané</button>
+      </div>
+
+      <div class="sublist active" id="piva">
+        <div class="menu-row"><span class="dish"><b>Čepovaná piva</b></span></div>
+        <div class="menu-row"><span class="dish">Pilsner Urquell hladina</span><span class="price">62 Kč</span></div>
+        <div class="menu-row"><span class="dish">Pilsner Urquell šnyt</span><span class="price">49 Kč</span></div>
+        <div class="menu-row"><span class="dish"><b>Lahvová piva</b></span></div>
+        <div class="menu-row"><span class="dish">Kozel 11° hladina</span><span class="price">49 Kč</span></div>
+        <div class="menu-row"><span class="dish">Kozel 11° šnyt</span><span class="price">39 Kč</span></div>
+      </div>
+
+      <div class="sublist" id="panaky">
+        <div class="menu-row"><span class="dish"><b>Likéry 0,04l</b></span></div>
+        <div class="menu-row"><span class="dish">Zelená</span><span class="price">55 Kč</span></div>
+        <div class="menu-row"><span class="dish">Fernet</span><span class="price">65 Kč</span></div>
+        <div class="menu-row"><span class="dish">Jägermaister</span><span class="price">80 Kč</span></div>
+        <div class="menu-row"><span class="dish"><b>Pálenky 0,04l</b></span></div>
+        <div class="menu-row"><span class="dish">Slivovice Jelínek</span><span class="price">90 Kč</span></div>
+        <div class="menu-row"><span class="dish">Hruškovice Jelínek</span><span class="price">90 Kč</span></div>
+        <div class="menu-row"><span class="dish">Hruškovice Baron Hildprant</span><span class="price">120 Kč</span></div>
+        <div class="menu-row"><span class="dish"><b>Vodka 0,04l</b></span></div>
+        <div class="menu-row"><span class="dish">Absolut</span><span class="price">65 Kč</span></div>
+        <div class="menu-row"><span class="dish">Finlandia</span><span class="price">70 Kč</span></div>
+        <div class="menu-row"><span class="dish"><b>Rum 0,04l</b></span></div>
+        <div class="menu-row"><span class="dish">Republika</span><span class="price">70 Kč</span></div>
+        <div class="menu-row"><span class="dish">Hefron</span><span class="price">70 Kč</span></div>
+        <div class="menu-row"><span class="dish">Havana</span><span class="price">75 Kč</span></div>
+        <div class="menu-row"><span class="dish">Diplomatico</span><span class="price">140 Kč</span></div>
+        <div class="menu-row"><span class="dish"><b>Gin 0,04l</b></span></div>
+        <div class="menu-row"><span class="dish">Beefeater</span><span class="price">75 Kč</span></div>
+        <div class="menu-row"><span class="dish">Hendricks</span><span class="price">120 Kč</span></div>
+        <div class="menu-row"><span class="dish">Tanqueray</span><span class="price">135 Kč</span></div>
+        <div class="menu-row"><span class="dish"><b>Whisky 0,04l</b></span></div>
+        <div class="menu-row"><span class="dish">Tullamore Dew</span><span class="price">85 Kč</span></div>
+        <div class="menu-row"><span class="dish">Jack Daniels</span><span class="price">100 Kč</span></div>
+        <div class="menu-row"><span class="dish">Glenfiddich</span><span class="price">210 Kč</span></div>
+      </div>
+
+      <div class="sublist" id="vino">
+        <div class="menu-row"><span class="dish"><b>bílé víno</b></span></div>
+        <div class="menu-row"><span class="dish">Müller Thurgau / suché / 0,1l / 0,5l</span><span class="price">30 Kč / 140 Kč</span></div>
+        <div class="menu-row"><span class="dish">Ryzlink Rýnský 2023 / pozdní sběr – suché 0,75l</span><span class="price">390 Kč</span></div>
+        <div class="menu-row"><span class="dish"><b>červené víno</b></span></div>
+        <div class="menu-row"><span class="dish">Modrý portugal / zemské víno – polosuché / 0,1l</span><span class="price">30 Kč / 140 Kč</span></div>
+        <div class="menu-row"><span class="dish">Dornfelder 2022 / pozdní sběr – polosuché 0,75l</span><span class="price">360 Kč</span></div>
+        <div class="menu-row"><span class="dish"><b>šumivá vína</b></span></div>
+        <div class="menu-row"><span class="dish">Bohemia sek brut 0,1l / 0,75l</span><span class="price">55 Kč / 290 Kč</span></div>
+        <div class="menu-row"><span class="dish">Prosecco DOC 0,1l / 0,75l</span><span class="price">75 Kč / 380 Kč</span></div>
+      </div>
+
+      <div class="sublist" id="nealkoholicke">
+        <div class="menu-row"><span class="dish">Coca cola 0,33l</span><span class="price">55 Kč</span></div>
+        <div class="menu-row"><span class="dish">Coca cola light 0,33l</span><span class="price">55 Kč</span></div>
+        <div class="menu-row"><span class="dish">Fanta 0,33l</span><span class="price">55 Kč</span></div>
+        <div class="menu-row"><span class="dish">Sprite 0,33l</span><span class="price">55 Kč</span></div>
+        <div class="menu-row"><span class="dish">Neperlivá natura 0,25l</span><span class="price">45 Kč</span></div>
+        <div class="menu-row"><span class="dish">Jemě perlivá natura 0,25l</span><span class="price">45 Kč</span></div>
+        <div class="menu-row"><span class="dish">Perlivá natura 0,25l</span><span class="price">45 Kč</span></div>
+        <div class="menu-row"><span class="dish">Džus rozlévaný jablko 0,2l</span><span class="price">40 Kč</span></div>
+        <div class="menu-row"><span class="dish">Džus rozlévaný pomeranč 0,2l</span><span class="price">40 Kč</span></div>
+        <div class="menu-row"><span class="dish">Kinley tonic 0,25l</span><span class="price">55 Kč</span></div>
+        <div class="menu-row"><span class="dish">Red Bull 0,25l </span><span class="price">70 Kč</span></div>
+        <div class="menu-row"><span class="dish">Naše limonády 0,5l</span><span class="price">65 Kč</span></div>
+        <div class="menu-row"><span class="dish">Náš ledový čaj 0,5l</span><span class="price">65 Kč</span></div>
+        <div class="menu-row"><span class="dish">Džbán vody s citronem a mátou 0,5l </span><span class="price">50 Kč</span></div>
+        <div class="menu-row"><span class="dish">Hroznový mošt 0,1l</span><span class="price">25 Kč</span></div>
+      </div>
+
+      <div class="sublist" id="teple">
+        <div class="menu-row"><span class="dish">Espresso</span><span class="price">55 Kč</span></div>
+        <div class="menu-row"><span class="dish">Cappucino</span><span class="price">75 Kč</span></div>
+        <div class="menu-row"><span class="dish">Flat white</span><span class="price">90 Kč</span></div>
+        <div class="menu-row"><span class="dish">Čaj černý / zelený / ovocný</span><span class="price">55 Kč</span></div>
+        <div class="menu-row"><span class="dish">Zázvorový čaj s medem a citrónem</span><span class="price">60 Kč</span></div>
+        <div class="menu-row"><span class="dish">Mátový čaj s medem a citrónem</span><span class="price">60 Kč</span></div>
+        <div class="menu-row"><span class="dish">Grog / Teplá griotka</span><span class="price">80 Kč</span></div>
+      </div>
+
+      <div class="sublist" id="michane">
+        <div class="menu-row"><span class="dish">Aperol spritz</span><span class="price">130 Kč</span></div>
+        <div class="menu-row"><span class="dish">Cuba libre</span><span class="price">130 Kč</span></div>
+        <div class="menu-row"><span class="dish">Gin tonic</span><span class="price">130 Kč</span></div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="kontakt" class="contact">
+    <h2>Kontakt</h2>
+
+    <a href="form.html" class="big-contact-button" target="_blank">Vytvořit rezervaci</a>
+
+
+    <div class="contact-container">
+
+      <div class="contact-info">
+        <p><strong>U Hráze 125/27, Praha 10 Strašnice</strong></p>
+        <p>GPS: 50.0709942N, 14.4851211E</p>
+
+        <br>
+
+        <p><strong>Telefon:</strong> +420 775 755 061</p>
+        <p><strong>E-Mail:</strong> restaurace@strasnickamincovna.cz</p>
+        <p><strong>Provozovatel:</strong> Special Gastro Service s.r.o.</p>
+
+        <br>
+
+        <p><strong>Otevírací doba:</strong></p>
+        <p>Po – Pá: 11:00 – 23:00</p>
+        <p>So – Ne: 11:00 – 23:00</p>
+
+        <br>
+
+        <p>Vaříme 7 dní v týdnu od 11:00 do 22:00 hod.</p>
+      </div>
+
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.5773467068722!2d14.482546277077584!3d50.071000216977534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470beb855437ac85%3A0x95db20ad01a062fb!2sU%20Hráze%20125%2F27%2C%20100%2000%20Praha%2010-Strašnice!5e0!3m2!1scs!2scz!4v1732555550000"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Strašnická mincovna. Všechna práva vyhrazena. </p>
+    </div>
+  </footer>
+
+  <script>
+  /* MAIN CATEGORY SWITCHER */
+  const tabs = document.querySelectorAll('.tab');
+  const lists = document.querySelectorAll('.menu-list');
+
+  tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          lists.forEach(l => l.classList.remove('active'));
+          tab.classList.add('active');
+          document.getElementById(tab.dataset.target).classList.add('active');
+      });
+  });
+
+  /* UNIVERSAL SUBMENU SWITCHER (works for all categories) */
+  document.querySelectorAll('.menu-list').forEach(menuBlock => {
+      const subtabs = menuBlock.querySelectorAll('.subtab');
+      const sublists = menuBlock.querySelectorAll('.sublist');
+
+      if (subtabs.length > 0) {
+          subtabs.forEach(subtab => {
+              subtab.addEventListener('click', () => {
+
+                  subtabs.forEach(s => s.classList.remove('active'));
+                  sublists.forEach(s => s.classList.remove('active'));
+
+                  subtab.classList.add('active');
+                  menuBlock.querySelector('#' + subtab.dataset.sub).classList.add('active');
+              });
+          });
+      }
+  });
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+  </script>
+
+
+</body>
+</html>
