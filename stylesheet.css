@@ -391,9 +391,11 @@ button:hover {
     input[type="time"],
     select {
         width: 100% !important;
+        padding: 14px;
         min-width: 0 !important;
         -webkit-appearance: none;
         appearance: none;
     }
 
 }
+
