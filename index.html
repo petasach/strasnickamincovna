@@ -16,6 +16,7 @@
         <ul>
           <li><a href="#onas">O nás</a></li>
           <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Galerie</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </nav>
@@ -370,6 +371,46 @@
 
   </section>
 
+  <section id="galerie" class="gallery">
+    <h2>Galerie</h2>
+
+
+    <div class="gallery-carousel">
+          <div class="gallery-track">
+              <div class="gallery-item" onclick="openModal(this)">
+                  <img src="gallery/porche.jpg" loading="lazy">
+              </div>
+              
+              <div class="gallery-item" onclick="openModal(this)">
+                  <img src="gallery/bmw.jpg" loading="lazy">
+              </div>
+              
+              <div class="gallery-item" onclick="openModal(this)">
+                  <img src="gallery/porche.jpg" loading="lazy">
+              </div>
+              
+              <div class="gallery-item" onclick="openModal(this)">
+                  <img src="gallery/bmw.jpg" loading="lazy">
+              </div>
+              
+              <div class="gallery-item" onclick="openModal(this)">
+                  <img src="gallery/porche.jpg" loading="lazy">
+              </div>
+              
+              <div class="gallery-item" onclick="openModal(this)">
+                  <img src="gallery/bmw.jpg" loading="lazy">
+              </div>
+              
+              <div class="gallery-item" onclick="openModal(this)">
+                  <img src="gallery/porche.jpg" loading="lazy">
+              </div>
+              
+              <div class="gallery-item" onclick="openModal(this)">
+                  <img src="gallery/bmw.jpg" loading="lazy">
+              </div>
+          </div>
+      </div>
+  </section>
 
   <section id="kontakt" class="contact">
     <h2>Kontakt</h2>
@@ -411,7 +452,6 @@
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
-
     </div>
   </section>
 
@@ -422,46 +462,94 @@
     </div>
   </footer>
 
+  <!-- Lightbox Modal -->
+  <div id="lightboxModal" class="lightbox-modal">
+    <span id="closeModal" class="lightbox-close">&times;</span>
+    <img id="lightboxImg" src="" class="lightbox-img">
+    <button id="prevImg" class="lightbox-arrow left">&#10094;</button>
+    <button id="nextImg" class="lightbox-arrow right">&#10095;</button>
+  </div>
+
+
   <script>
-  /* MAIN CATEGORY SWITCHER */
-  const tabs = document.querySelectorAll('.tab');
-  const lists = document.querySelectorAll('.menu-list');
+    /* MAIN CATEGORY SWITCHER */
+    const tabs = document.querySelectorAll('.tab');
+    const lists = document.querySelectorAll('.menu-list');
 
-  tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-          tabs.forEach(t => t.classList.remove('active'));
-          lists.forEach(l => l.classList.remove('active'));
-          tab.classList.add('active');
-          document.getElementById(tab.dataset.target).classList.add('active');
-      });
-  });
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            lists.forEach(l => l.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.target).classList.add('active');
+        });
+    });
 
-  /* UNIVERSAL SUBMENU SWITCHER (works for all categories) */
-  document.querySelectorAll('.menu-list').forEach(menuBlock => {
-      const subtabs = menuBlock.querySelectorAll('.subtab');
-      const sublists = menuBlock.querySelectorAll('.sublist');
+    /* UNIVERSAL SUBMENU SWITCHER (works for all categories) */
+    document.querySelectorAll('.menu-list').forEach(menuBlock => {
+        const subtabs = menuBlock.querySelectorAll('.subtab');
+        const sublists = menuBlock.querySelectorAll('.sublist');
 
-      if (subtabs.length > 0) {
-          subtabs.forEach(subtab => {
-              subtab.addEventListener('click', () => {
+        if (subtabs.length > 0) {
+            subtabs.forEach(subtab => {
+                subtab.addEventListener('click', () => {
 
-                  subtabs.forEach(s => s.classList.remove('active'));
-                  sublists.forEach(s => s.classList.remove('active'));
+                    subtabs.forEach(s => s.classList.remove('active'));
+                    sublists.forEach(s => s.classList.remove('active'));
 
-                  subtab.classList.add('active');
-                  menuBlock.querySelector('#' + subtab.dataset.sub).classList.add('active');
-              });
-          });
-      }
-  });
+                    subtab.classList.add('active');
+                    menuBlock.querySelector('#' + subtab.dataset.sub).classList.add('active');
+                });
+            });
+        }
+    });
 
-  // When the user clicks on the button, scroll to the top of the document
-  function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  }
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
+    // GALLERY LIGHTBOX
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const modal = document.getElementById('lightboxModal');
+    const modalImg = document.getElementById('lightboxImg');
+    const closeModalBtn = document.getElementById('closeModal');
+    const prevBtn = document.getElementById('prevImg');
+    const nextBtn = document.getElementById('nextImg');
+
+    let currentIndex = 0;
+
+    function openModal(item) {
+        modal.style.display = 'flex';
+        modalImg.src = item.querySelector('img').src;
+        currentIndex = Array.from(galleryItems).indexOf(item.querySelector('img'));
+    }
+
+    function showImage(index) {
+        if(index < 0) index = galleryItems.length - 1;
+        if(index >= galleryItems.length) index = 0;
+        modalImg.src = galleryItems[index].src;
+        currentIndex = index;
+    }
+
+    function nextImage() {
+            showImage(currentIndex + 1);
+        }
+        
+    function prevImage() {
+        showImage(currentIndex - 1);
+    }
+
+    closeModalBtn.onclick = () => modal.style.display = 'none';
+    prevBtn.onclick = () => prevImage();
+    nextBtn.onclick = () => nextImage();
+
+    // Close modal if clicked outside the image
+    modal.onclick = (e) => {
+        if(e.target === modal) modal.style.display = 'none';
+    }
+
   </script>
-
-
 </body>
 </html>

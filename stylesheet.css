@@ -86,6 +86,7 @@ nav ul li a:hover {
     color: white;
     text-align: center;
     position: relative;
+    padding: 0 !important;
 }
 
 .hero::after {
@@ -114,18 +115,18 @@ nav ul li a:hover {
 }
 
 section {
-    padding: 80px 0;
     scroll-margin: var(--header-height);
 }
 
-.about, .menu, .contact {
+.about, .menu, .gallery, .contact {
     text-align: center;
 }
 
-.about h2, .menu h2, .contact h2 {
+.about h2, .menu h2, .gallery h2, .contact h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     margin-bottom: 20px;
+    margin-top: 40px;
 }
 
 .about p {
@@ -239,11 +240,55 @@ section {
     display: block;
 }
 
+.gallery-carousel {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+
+.gallery-track {
+    width: 100vw !important;
+    display: flex;
+    gap: 0;
+}
+
+.gallery-track {
+    animation: galleryScrollLeft 10s linear infinite;
+}
+
+@keyframes galleryScrollLeft {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-100vw); }
+}
+
+.gallery-item {
+    flex-shrink: 0;
+    position: relative;
+    width: 25vw;
+    cursor: pointer;
+    transition: var(--transition);
+    /*background: linear-gradient(0deg, black, #00000000, #00000000);*/
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    /*mix-blend-mode: overlay;*/
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
 .big-contact-button {
     display: inline-block;
     padding: 15px 40px;
-    background: #eee;
-    color: #000;
+    background: var(--button-color);
+    color: #fff;
     font-size: 1.2rem;
     font-weight: 700;
     border-radius: 8px;
@@ -253,8 +298,8 @@ section {
 }
 
 .big-contact-button:hover {
-    background: var(--button-color);
-    color: #fff;
+    background: #eee;
+    color: #000;
 }
 
 .contact-container {
@@ -282,6 +327,7 @@ section {
 } 
 
 footer {
+    margin-top: 80px;
     background: #f8f8f8;
     padding: 40px 0;
     text-align: center;
@@ -388,6 +434,10 @@ button:hover {
     margin: 20px 0 30px 0;
     }
 
+    button:hover {
+        background: none;
+    }
+
     input[type="date"],
     input[type="time"],
     select {
@@ -399,5 +449,57 @@ button:hover {
         -webkit-appearance: none;
         appearance: none;
     }
-
 }
+
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1010;
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1010;
+  user-select: none;
+}
+
+.lightbox-arrow.left { left: 20px; }
+.lightbox-arrow.right { right: 20px; }
+
+@media (max-width: 768px) {
+  .lightbox-img { max-width: 100%; max-height: 70%; }
+  .lightbox-arrow { font-size: 2.5rem; }
+}
+
