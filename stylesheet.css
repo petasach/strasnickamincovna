@@ -518,6 +518,7 @@ button:hover {
   padding: 20px 0;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   z-index: 999;
+  text-align: center;
 }
 
 .mobile-menu li {
@@ -610,4 +611,5 @@ button:hover {
   .lightbox-img { max-width: 100%; max-height: 70%; }
   .lightbox-arrow { font-size: 2.5rem; }
 }
+
 
