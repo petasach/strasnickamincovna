@@ -1,5 +1,5 @@
 :root {
-    --button-color: #a33;
+    --button-color: #940000;
     --logo-size: 100px;
     --header-padding: 10px;
     --header-height: calc(var(--logo-size) + 2 * var(--header-padding));
@@ -16,7 +16,7 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans';
     line-height: 1.6;
     color: #333;
     margin-top: var(--header-height);
@@ -48,7 +48,7 @@ nav {
 }
 
 nav .logo {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans';
     font-size: 1.8rem;
     font-weight: 700;
     cursor: pointer;
@@ -68,7 +68,7 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #000;
     font-weight: 600;
     transition: color .3s;
 }
@@ -93,7 +93,7 @@ nav ul li a.reserve-btn:hover {
 
 .hero {
     height: calc(100vh - var(--header-height));
-    background: url('hero-image.jpg') center/cover no-repeat;
+    background: url('fot.jpeg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,12 +114,13 @@ nav ul li a.reserve-btn:hover {
 }
 
 .hero .hero-content {
+    letter-spacing: 5px;
     position: relative;
     z-index: 1;
 }
 
 .hero h1 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Work Sans';
     font-size: 3rem;
     margin-bottom: 10px;
 }
@@ -137,7 +138,7 @@ section {
 }
 
 .about h2, .menu h2, .gallery h2, .contact h2 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Work Sans';
     font-size: 2.5rem;
     margin-bottom: 20px;
     margin-top: 40px;
@@ -189,7 +190,7 @@ section {
 }
 
 .menu-row .dish {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans';
     font-size: 1.1rem;
     text-align: left;
 }
@@ -333,6 +334,7 @@ section {
 }
 
 .contact-container {
+    /*background: ;*/
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
@@ -375,7 +377,7 @@ footer p {
     background: #fff;
     border-radius: 16px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans';
 }
 
 .reservation-container h2 {
