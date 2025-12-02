@@ -13,11 +13,27 @@
     <div class="container">
       <nav>
         <div class="logo" onclick="topFunction()"><img src="smlogo.png" alt="Logo"></div>
+
+        <div class="hamburger" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <ul class="mobile-menu">
+          <li><a href="#onas" onclick="toggleMobileMenu()">O nás</a></li>
+          <li><a href="#menu" onclick="toggleMobileMenu()">Menu</a></li>
+          <li><a href="#gallery" onclick="toggleMobileMenu()">Galerie</a></li>
+          <li><a href="#kontakt" onclick="toggleMobileMenu()">Kontakt</a></li>
+          <li><a href="form.html" class="reserve-btn" onclick="toggleMobileMenu()">Vytvořit rezervaci</a></li>
+        </ul>
+
         <ul>
           <li><a href="#onas">O nás</a></li>
           <li><a href="#menu">Menu</a></li>
           <li><a href="#gallery">Galerie</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="form.html" class="reserve-btn">Vytvořit rezervaci</a></li>
         </ul>
       </nav>
     </div>
@@ -379,34 +395,42 @@
           <div class="gallery-track">
               <div class="gallery-item" onclick="openModal(this)">
                   <img src="gallery/porche.jpg" loading="lazy">
+                  <div class="img-title">Jídlo 1</div>
               </div>
               
               <div class="gallery-item" onclick="openModal(this)">
                   <img src="gallery/bmw.jpg" loading="lazy">
+                  <div class="img-title">Jídlo 2</div>
+              </div>
+              
+              <div class="gallery-item" onclick="openModal(this)">
+                  <img src="gallery/mulaut.jpg" loading="lazy">
+                  <div class="img-title">Jídlo 3</div>
+              </div>
+              
+              <div class="gallery-item" onclick="openModal(this)">
+                  <img src="gallery/cerbmw.jpg" loading="lazy">
+                  <div class="img-title">Jídlo 4</div>
               </div>
               
               <div class="gallery-item" onclick="openModal(this)">
                   <img src="gallery/porche.jpg" loading="lazy">
+                  <div class="img-title">Jídlo 5</div>
               </div>
               
               <div class="gallery-item" onclick="openModal(this)">
                   <img src="gallery/bmw.jpg" loading="lazy">
+                  <div class="img-title">Jídlo 6</div>
               </div>
               
               <div class="gallery-item" onclick="openModal(this)">
-                  <img src="gallery/porche.jpg" loading="lazy">
+                  <img src="gallery/mulaut.jpg" loading="lazy">
+                  <div class="img-title">Jídlo 7</div>
               </div>
               
               <div class="gallery-item" onclick="openModal(this)">
-                  <img src="gallery/bmw.jpg" loading="lazy">
-              </div>
-              
-              <div class="gallery-item" onclick="openModal(this)">
-                  <img src="gallery/porche.jpg" loading="lazy">
-              </div>
-              
-              <div class="gallery-item" onclick="openModal(this)">
-                  <img src="gallery/bmw.jpg" loading="lazy">
+                  <img src="gallery/cerbmw.jpg" loading="lazy">
+                  <div class="img-title">Jídlo 8</div>
               </div>
           </div>
       </div>
@@ -428,7 +452,7 @@
 
         <p><strong>Telefon:</strong> +420 775 755 061</p>
         <p><strong>E-Mail:</strong> restaurace@strasnickamincovna.cz</p>
-        <p><strong>Provozovatel:</strong> Special Gastro Service s.r.o.</p>
+        <p><strong>Provozovatel:</strong> Yacobs Trade, s.r.o.</p>
 
         <br>
 
@@ -464,12 +488,14 @@
 
   <!-- Lightbox Modal -->
   <div id="lightboxModal" class="lightbox-modal">
-    <span id="closeModal" class="lightbox-close">&times;</span>
-    <img id="lightboxImg" src="" class="lightbox-img">
-    <button id="prevImg" class="lightbox-arrow left">&#10094;</button>
-    <button id="nextImg" class="lightbox-arrow right">&#10095;</button>
-  </div>
+      <span id="closeModal" class="lightbox-close">&times;</span>
+      <img id="lightboxImg" class="lightbox-img">
 
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+
+      <button id="prevImg" class="lightbox-arrow left">&#10094;</button>
+      <button id="nextImg" class="lightbox-arrow right">&#10095;</button>
+  </div>
 
   <script>
     /* MAIN CATEGORY SWITCHER */
@@ -510,45 +536,50 @@
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
 
+    function toggleMobileMenu() {
+      document.querySelector('.mobile-menu').classList.toggle('active');
+    }
+
     // GALLERY LIGHTBOX
-    const galleryItems = document.querySelectorAll('.gallery-item img');
-    const modal = document.getElementById('lightboxModal');
-    const modalImg = document.getElementById('lightboxImg');
-    const closeModalBtn = document.getElementById('closeModal');
-    const prevBtn = document.getElementById('prevImg');
-    const nextBtn = document.getElementById('nextImg');
-
     let currentIndex = 0;
+    const items = document.querySelectorAll(".gallery-item");
+    const modal = document.getElementById("lightboxModal");
+    const modalImg = document.getElementById("lightboxImg");
+    const modalCaption = document.getElementById("lightboxCaption");
 
-    function openModal(item) {
-        modal.style.display = 'flex';
-        modalImg.src = item.querySelector('img').src;
-        currentIndex = Array.from(galleryItems).indexOf(item.querySelector('img'));
+    function openModal(element) {
+        currentIndex = Array.from(items).indexOf(element);
+
+        const img = element.querySelector("img");
+        const caption = element.querySelector(".img-title");
+
+        modalImg.src = img.src;
+        modalCaption.textContent = caption ? caption.textContent : "";
+
+        modal.style.display = "flex";
     }
 
     function showImage(index) {
-        if(index < 0) index = galleryItems.length - 1;
-        if(index >= galleryItems.length) index = 0;
-        modalImg.src = galleryItems[index].src;
-        currentIndex = index;
+        currentIndex = (index + items.length) % items.length;
+
+        const img = items[currentIndex].querySelector("img");
+        const caption = items[currentIndex].querySelector(".img-title");
+
+        modalImg.src = img.src;
+        modalCaption.textContent = caption ? caption.textContent : "";
     }
 
-    function nextImage() {
-            showImage(currentIndex + 1);
-        }
-        
-    function prevImage() {
+    document.getElementById("prevImg").onclick = () => {
         showImage(currentIndex - 1);
-    }
+    };
 
-    closeModalBtn.onclick = () => modal.style.display = 'none';
-    prevBtn.onclick = () => prevImage();
-    nextBtn.onclick = () => nextImage();
+    document.getElementById("nextImg").onclick = () => {
+        showImage(currentIndex + 1);
+    };
 
-    // Close modal if clicked outside the image
-    modal.onclick = (e) => {
-        if(e.target === modal) modal.style.display = 'none';
-    }
+    document.getElementById("closeModal").onclick = () => {
+        modal.style.display = "none";
+    };
 
   </script>
 </body>
