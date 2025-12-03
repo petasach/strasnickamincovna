@@ -574,6 +574,19 @@
         modalCaption.textContent = caption ? caption.textContent : "";
     }
 
+    function nextImage() {
+        showImage(currentIndex + 1);
+    }
+    
+    function prevImage() {
+        showImage(currentIndex - 1);
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('lightboxModal');
+        modal.style.display = "none";
+    }
+
     document.getElementById("prevImg").onclick = () => {
         showImage(currentIndex - 1);
     };
@@ -583,8 +596,53 @@
     };
 
     document.getElementById("closeModal").onclick = () => {
-        modal.style.display = "none";
+        closeModal();
     };
+
+    document.getElementById('lightboxModal').addEventListener('click', (e) => {
+        const clickedElement = e.target;
+    
+        // If clicking directly the background → close
+        if (clickedElement.id === 'lightboxModal') {
+            closeModal();
+        }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        const modal = document.getElementById('lightboxModal');
+    
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'Escape') closeModal();
+    });
+
+    // Touch swipe navigation
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    const modalEl = document.getElementById('lightboxModal');
+    
+    modalEl.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    modalEl.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleGesture();
+    });
+    
+    function handleGesture() {
+      const swipeDistance = touchEndX - touchStartX;
+  
+      if (Math.abs(swipeDistance) < 50) return; // ignore tiny gestures
+  
+      if (swipeDistance < 0) {
+          nextImage(); // swipe left → next
+      } else {
+          prevImage(); // swipe right → prev
+      }
+    }
 
   </script>
 </body>
