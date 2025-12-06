@@ -450,6 +450,10 @@ button:hover {
     margin: auto;
 }
 
+#popupgdpr h2 {
+    margin-top: 25px;
+}
+
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.2rem;
@@ -631,6 +635,7 @@ button:hover {
   .lightbox-img { max-width: 100%; max-height: 70%; }
   .lightbox-arrow { font-size: 2.5rem; }
 }
+
 
 
 
