@@ -454,6 +454,67 @@ button:hover {
     margin-top: 25px;
 }
 
+#mbcontent #menubotsub {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 6px 0;
+}
+#mbcontent #mbtext {
+  flex: 1 1 260px;
+  min-width: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+#mbcontent #mbsubmit {
+  flex: 0 0 auto;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  background: var(--button-color);
+  color: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  cursor: pointer;
+  box-sizing: border-box;
+  align-self: stretch;
+  height: auto;
+  width: auto !important;
+}
+#mbcontent #menubotsub input[type="submit"],
+#mbcontent #menubotsub button {
+  width: auto !important;
+}
+#mbcontent #menubotsub input[type="checkbox"],
+#mbcontent #mbgdprlabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  vertical-align: middle;
+}
+#mbcontent #mbgdprlabel {
+  margin: 0;
+  cursor: pointer;
+  font-weight: 600;
+  color: #111;
+}
+#mbcontent #menubotsub input[type="checkbox"] {
+  margin-right: 6px;
+}
+#mbcontent #menubotsub .mb-gdpr-inline {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.2rem;
@@ -635,6 +696,7 @@ button:hover {
   .lightbox-img { max-width: 100%; max-height: 70%; }
   .lightbox-arrow { font-size: 2.5rem; }
 }
+
 
 
 
