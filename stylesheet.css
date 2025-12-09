@@ -446,7 +446,7 @@ button:hover {
 }
 
 #mbcontent {
-    width: 300px;
+    width: 340px;
     margin: auto;
 }
 
@@ -465,7 +465,7 @@ button:hover {
   padding: 6px 0;
 }
 #mbcontent #mbtext {
-  flex: 1 1 260px;
+  width: 220px;
   min-width: 0;
   padding: 10px 12px;
   border-radius: 8px;
@@ -502,6 +502,9 @@ button:hover {
   cursor: pointer;
   font-weight: 600;
   color: #111;
+}
+#mbcontent #mbgdpr {
+  width: 14px;
 }
 #mbcontent #menubotsub input[type="checkbox"] {
   margin-right: 6px;
@@ -696,6 +699,7 @@ button:hover {
   .lightbox-img { max-width: 100%; max-height: 70%; }
   .lightbox-arrow { font-size: 2.5rem; }
 }
+
 
 
 
