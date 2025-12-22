@@ -287,7 +287,7 @@ section {
 
 @keyframes galleryScrollLeft {
     from { transform: translateX(0); }
-    to   { transform: translateX(-125vw); }
+    to   { transform: translateX(-100vw); }
 }
 
 .gallery-item {
@@ -699,6 +699,7 @@ button:hover {
   .lightbox-img { max-width: 100%; max-height: 70%; }
   .lightbox-arrow { font-size: 2.5rem; }
 }
+
 
 
 
