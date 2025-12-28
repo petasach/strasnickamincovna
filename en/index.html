@@ -9,78 +9,305 @@
   <meta name="google-site-verification" content="xVALBXyhpSJMT7it7mleIqdlcceSo4xyd2v2n-z_BBA" />
 </head>
 <body>
-
 <script src="https://www.menubot.cz/app/users/strasnickamincovna85123695223/export/notice_b.js?"+Date.now()></script>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo" onclick="topFunction()"><img src="../smlogo.png" alt="Logo"></div>
 
-<header>
-  <div class="container">
-    <nav>
-      <div class="logo" onclick="topFunction()"><img src="smlogo.png" alt="Logo"></div>
+        <div class="hamburger" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 
-      <div class="hamburger" onclick="toggleMobileMenu()">
-        <span></span><span></span><span></span>
+        <ul class="mobile-menu">
+          <li><a href="#lunch-menu" onclick="toggleMobileMenu()">Lunch menu</a></li>
+          <!--<li><a href="#about" onclick="toggleMobileMenu()">About</a></li>-->
+          <li><a href="#menu" onclick="toggleMobileMenu()">Menu</a></li>
+          <li><a href="#gallery" onclick="toggleMobileMenu()">Gallery</a></li>
+          <li><a href="#contact" onclick="toggleMobileMenu()">Contact</a></li>
+          <li><a href="../form.html" class="reserve-btn" onclick="toggleMobileMenu()">Make a reservation</a></li>
+        </ul>
+
+        <ul>
+          <li><a href="#lunch-menu">Lunch menu</a></li>
+          <!--<li><a href="#about">About</a></li>-->
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="../form.html" class="reserve-btn">Make a reservation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <!--<h1>STRAŠNICKÁ MINCOVNA</h1>-->
+    </div>
+  </section>
+  
+  <section id="lunch-menu" class="poledni-menu container">
+    <script src="https://www.menubot.cz/app/users/strasnickamincovna85123695223/export/dailymenu_b.js?"+Date.now()></script>
+  </section>
+
+  <!--<section id="about" class="about container">
+    <h2>About us</h2>
+    <p>Some text about the restaurant.</p>
+  </section>-->
+
+  <!-- MENU SECTION -->
+  <section id="menu" class="menu container">
+    <h2>Our menu</h2>
+<script src="https://www.menubot.cz/app/users/strasnickamincovna85123695223/export/standardmenu1_b.js?"+Date.now()></script>
+    
+
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2>Gallery</h2>
+
+
+    <div class="gallery-carousel">
+          <div class="gallery-track">
+              <div class="gallery-item" onclick="openModal(this)">
+                  <img src="../gallery/Formanka.jpg" loading="lazy">
+                  <!--<div class="img-title">Food 1</div>-->
+              </div>
+              
+              <div class="gallery-item" onclick="openModal(this)">
+                  <img src="../gallery/Formanka II.jpg" loading="lazy">
+                  <!--<div class="img-title">Food 2</div>-->
+              </div>
+              
+              <div class="gallery-item" onclick="openModal(this)">
+                  <img src="../gallery/Salonek.jpg" loading="lazy">
+                  <!--<div class="img-title">Food 3</div>-->
+              </div>
+              
+              <div class="gallery-item" onclick="openModal(this)">
+                  <img src="../gallery/Salonek II.jpg" loading="lazy">
+                  <!--<div class="img-title">Food 4</div>-->
+              </div>
+              
+              <div class="gallery-item" onclick="openModal(this)">
+                  <img src="../gallery/Formanka.jpg" loading="lazy">
+                  <!--<div class="img-title">Food 1</div>-->
+              </div>
+              
+              <div class="gallery-item" onclick="openModal(this)">
+                  <img src="../gallery/Formanka II.jpg" loading="lazy">
+                  <!--<div class="img-title">Food 2</div>-->
+              </div>
+              
+              <div class="gallery-item" onclick="openModal(this)">
+                  <img src="../gallery/Salonek.jpg" loading="lazy">
+                  <!--<div class="img-title">Food 3</div>-->
+              </div>
+              
+              <div class="gallery-item" onclick="openModal(this)">
+                  <img src="../gallery/Salonek II.jpg" loading="lazy">
+                  <!--<div class="img-title">Food 4</div>-->
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+
+    <a href="../form.html" class="big-contact-button" target="_blank">Make a reservation</a>
+
+
+    <div class="contact-container">
+
+      <div class="contact-info">
+        <p><strong>U Hráze 125/27, Prague 10 – Strašnice</strong></p>
+        <p>GPS: 50.0709942N, 14.4851211E</p>
+
+        <br>
+
+        <p><strong>Phone:</strong> +420 775 755 061</p>
+        <p><strong>Email:</strong> restaurace@strasnickamincovna.cz</p>
+        <p><strong>Operator:</strong> Yacobs Trade, s.r.o.</p>
+
+        <br>
+
+        <p><strong>Opening hours:</strong></p>
+        <p>Mon – Fri: 11:00 – 23:00</p>
+        <p>Sat – Sun: 11:00 – 23:00</p>
+
+        <br>
+
+        <p>Kitchen open 7 days a week from 11:00 to 22:00.</p>
       </div>
 
-      <ul class="mobile-menu">
-        <li><a href="#lunch-menu" onclick="toggleMobileMenu()">Lunch menu</a></li>
-        <li><a href="#menu" onclick="toggleMobileMenu()">Menu</a></li>
-        <li><a href="#gallery" onclick="toggleMobileMenu()">Gallery</a></li>
-        <li><a href="#contact" onclick="toggleMobileMenu()">Contact</a></li>
-        <li><a href="form.html" class="reserve-btn" onclick="toggleMobileMenu()">Make a reservation</a></li>
-      </ul>
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.5773467068722!2d14.482546277077584!3d50.071000216977534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470beb855437ac85%3A0x95db20ad01a062fb!2sU%20Hráze%20125%2F27%2C%20100%2000%20Praha%2010-Strašnice!5e0!3m2!1scs!2scz!4v1732555550000"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
 
-      <ul>
-        <li><a href="#lunch-menu">Lunch menu</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="form.html" class="reserve-btn">Make a reservation</a></li>
-      </ul>
-    </nav>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Strašnická Mincovna. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightboxModal" class="lightbox-modal">
+      <span id="closeModal" class="lightbox-close">&times;</span>
+      <img id="lightboxImg" class="lightbox-img">
+
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+
+      <button id="prevImg" class="lightbox-arrow left">&#10094;</button>
+      <button id="nextImg" class="lightbox-arrow right">&#10095;</button>
   </div>
-</header>
 
-<section class="hero"></section>
+  <script>
+    /* MAIN CATEGORY SWITCHER */
+    const tabs = document.querySelectorAll('.tab');
+    const lists = document.querySelectorAll('.menu-list');
 
-<section id="lunch-menu" class="poledni-menu container">
-  <script src="https://www.menubot.cz/app/users/strasnickamincovna85123695223/export/dailymenu_b.js?"+Date.now()></script>
-</section>
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            lists.forEach(l => l.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.target).classList.add('active');
+        });
+    });
 
-<section id="menu" class="menu container">
-<h2>Our menu</h2>
-<script src="https://www.menubot.cz/app/users/strasnickamincovna85123695223/export/standardmenu1_b.js?"+Date.now()></script>
-</section>
+    /* UNIVERSAL SUBMENU SWITCHER (works for all categories) */
+    document.querySelectorAll('.menu-list').forEach(menuBlock => {
+        const subtabs = menuBlock.querySelectorAll('.subtab');
+        const sublists = menuBlock.querySelectorAll('.sublist');
 
-<section id="gallery" class="gallery">
-<h2>Gallery</h2>
-</section>
+        if (subtabs.length > 0) {
+            subtabs.forEach(subtab => {
+                subtab.addEventListener('click', () => {
 
-<section id="contact" class="contact">
-<h2>Contact</h2>
+                    subtabs.forEach(s => s.classList.remove('active'));
+                    sublists.forEach(s => s.classList.remove('active'));
 
-<a href="form.html" class="big-contact-button" target="_blank">Make a reservation</a>
+                    subtab.classList.add('active');
+                    menuBlock.querySelector('#' + subtab.dataset.sub).classList.add('active');
+                });
+            });
+        }
+    });
 
-<div class="contact-container">
-  <div class="contact-info">
-    <p><strong>U Hráze 125/27, Prague 10 – Strašnice</strong></p>
-    <p>GPS: 50.0709942N, 14.4851211E</p>
-    <p><strong>Phone:</strong> +420 775 755 061</p>
-    <p><strong>Email:</strong> restaurace@strasnickamincovna.cz</p>
-    <p><strong>Operator:</strong> Yacobs Trade, s.r.o.</p>
-    <p><strong>Opening hours:</strong></p>
-    <p>Mon–Fri: 11:00–23:00</p>
-    <p>Sat–Sun: 11:00–23:00</p>
-    <p>Kitchen open daily from 11:00 to 22:00</p>
-  </div>
-</div>
-</section>
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
 
-<footer>
-<div class="container">
-<p>&copy; 2025 Strašnická Mincovna. All rights reserved.</p>
-</div>
-</footer>
+    function toggleMobileMenu() {
+      document.querySelector('.mobile-menu').classList.toggle('active');
+    }
 
-<script src="https://www.menubot.cz/app/users/reservation.js?hash=strasnickamincovna85123695223&lang=en&c1=000&c2=fff&"+Date.now()></script>
+    let currentIndex = 0;
+    const items = document.querySelectorAll(".gallery-item");
+    const modal = document.getElementById("lightboxModal");
+    const modalImg = document.getElementById("lightboxImg");
+    const modalCaption = document.getElementById("lightboxCaption");
+
+    function openModal(element) {
+        currentIndex = Array.from(items).indexOf(element);
+
+        const img = element.querySelector("img");
+        const caption = element.querySelector(".img-title");
+
+        modalImg.src = img.src;
+        modalCaption.textContent = caption ? caption.textContent : "";
+
+        modal.style.display = "flex";
+    }
+
+    function showImage(index) {
+        currentIndex = (index + items.length) % items.length;
+
+        const img = items[currentIndex].querySelector("img");
+        const caption = items[currentIndex].querySelector(".img-title");
+
+        modalImg.src = img.src;
+        modalCaption.textContent = caption ? caption.textContent : "";
+    }
+
+    function nextImage() {
+        showImage(currentIndex + 1);
+    }
+    
+    function prevImage() {
+        showImage(currentIndex - 1);
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('lightboxModal');
+        modal.style.display = "none";
+    }
+
+    document.getElementById("prevImg").onclick = () => {
+        showImage(currentIndex - 1);
+    };
+
+    document.getElementById("nextImg").onclick = () => {
+        showImage(currentIndex + 1);
+    };
+
+    document.getElementById("closeModal").onclick = () => {
+        closeModal();
+    };
+
+    document.getElementById('lightboxModal').addEventListener('click', (e) => {
+        const clickedElement = e.target;
+        if (clickedElement.id === 'lightboxModal') {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        const modal = document.getElementById('lightboxModal');
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'Escape') closeModal();
+    });
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    const modalEl = document.getElementById('lightboxModal');
+    
+    modalEl.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    modalEl.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleGesture();
+    });
+    
+    function handleGesture() {
+      const swipeDistance = touchEndX - touchStartX;
+      if (Math.abs(swipeDistance) < 50) return;
+      if (swipeDistance < 0) {
+          nextImage();
+      } else {
+          prevImage();
+      }
+    }
+  </script>
+  <script src="https://www.menubot.cz/app/users/reservation.js?hash=strasnickamincovna85123695223&lang=en&c1=000&c2=fff&"+Date.now()></script>
 </body>
 </html>
